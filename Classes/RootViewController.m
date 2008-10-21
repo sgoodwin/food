@@ -17,6 +17,7 @@
 - (void)awakeFromNib
 {
 	self.title =@"Categories";
+	NSLog(@"Root View Controller is alive.");
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

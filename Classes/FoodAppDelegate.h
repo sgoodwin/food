@@ -14,9 +14,11 @@
     UIWindow *window;
     FoodViewController *viewController;
 	NSDictionary *menu;
+	UINavigationController *navigationController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet FoodViewController *viewController;
+@property (nonatomic, retain) FoodViewController *viewController;
 @property (nonatomic, retain) NSDictionary *menu;
+@property (nonatomic, retain) UINavigationController *navigationController;
 @end

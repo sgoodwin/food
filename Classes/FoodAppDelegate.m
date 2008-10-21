@@ -14,6 +14,7 @@
 @synthesize window;
 @synthesize viewController;
 @synthesize menu;
+@synthesize navigationController;
 
 - (id)init
 {
@@ -27,18 +28,28 @@
 	return self;
 }
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
-    // Override point for customization after app launch    
-    [window addSubview:viewController.view];
-    [window makeKeyAndVisible];
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
+	FoodViewController *mainMenu = [[FoodViewController alloc] initWithNibName:@"FoodViewController" bundle:[NSBundle mainBundle]];
+	self.viewController = mainMenu;
+	UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:mainMenu];
+	if(!navigation){
+		NSLog(@"Failed to create navigation controller.");
+	}
+	self.navigationController = navigation;
+	// Override point for customization after app launch 
+	[navigationController setNavigationBarHidden:YES animated:NO];
+	[window addSubview:[self.navigationController view]];
+	[window makeKeyAndVisible];
+	
+	[navigation release];
+	[mainMenu release];
 }
 
 
 - (void)dealloc {
-    [viewController release];
-    [window release];
-    [super dealloc];
+	[viewController release];
+	[window release];
+	[super dealloc];
 }
 
 

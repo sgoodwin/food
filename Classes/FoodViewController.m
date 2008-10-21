@@ -15,9 +15,9 @@
 
 - (void)awakeFromNib
 {
-	NSLog(@"I'm awake... I'm awake.");
+	NSLog(@"Food View Controller has awakened.");
 }
-
+/*
 - (id)init
 {
 	self = [super init];
@@ -25,15 +25,15 @@
 	return self;
 }
 
-/*
+*/
 // Override initWithNibName:bundle: to load the view using a nib file then perform additional customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Custom initialization
+		basket = [[NSMutableArray alloc] initWithCapacity:1];
     }
     return self;
 }
-*/
 
 /*
 // Implement loadView to create a view hierarchy programmatically.
