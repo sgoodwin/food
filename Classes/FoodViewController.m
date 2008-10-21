@@ -8,6 +8,7 @@
 
 #import "FoodViewController.h"
 #import "FoodAppDelegate.h"
+#import "RootViewController.h"
 
 @implementation FoodViewController
 @synthesize subTotal, basket;
@@ -107,16 +108,17 @@
 //Code for actions recieved by the controller:
 
 - (IBAction)addItem:(id)sender{
+	FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
 	NSLog(@"Add item time.", _cmd);
 	subTotal.text = @"$5.00";
 	//Setup root menu controller and push it so that they can find a menu item.
-	DetailViewController *detailViewController = [[DetailViewController alloc] initWithStyle:UITableViewStyleGrouped];
-
-    detailViewController.detailItem = [dataController objectInListAtIndex:indexPath.row];
+	RootViewController *rootView = [[RootViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	NSArray *toplevelContent = [[delegate menu] objectForKey:@"itemChildren"];
+	rootView.listContent = toplevelContent;
 
     // Push the detail view controller
-    [[self navigationController] pushViewController:detailViewController animated:YES];
-    [detailViewController release];
+    [[self navigationController] pushViewController:rootView animated:YES];
+    [rootView release];
 }
 - (IBAction)checkout:(id)sender{
 	NSLog(@"You been checked out.", _cmd);

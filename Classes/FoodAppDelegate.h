@@ -13,10 +13,10 @@
 @interface FoodAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     FoodViewController *viewController;
+	NSDictionary *menu;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet FoodViewController *viewController;
-
+@property (nonatomic, retain) NSDictionary *menu;
 @end
-

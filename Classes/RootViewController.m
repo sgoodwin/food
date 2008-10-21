@@ -8,7 +8,7 @@
 
 #import "RootViewController.h"
 #import "FoodAppDelegate.h"
-#import "FoodItem.h"
+//#import "FoodItem.h"
 
 
 @implementation RootViewController
@@ -30,7 +30,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	OrderFoodAppDelegate *delegate = (OrderFoodAppDelegate *)[[UIApplication sharedApplication] delegate];
+	FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
 	static NSString *CellIdentifier = @"Cell";
 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];

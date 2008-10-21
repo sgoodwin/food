@@ -13,7 +13,19 @@
 
 @synthesize window;
 @synthesize viewController;
+@synthesize menu;
 
+- (id)init
+{
+	self = [super init];
+	if(self)
+	{
+		NSString *path = [[NSBundle mainBundle] bundlePath];
+		NSString *finalPath = [path stringByAppendingPathComponent:@"menu.plist"];
+		menu = [[NSDictionary dictionaryWithContentsOfFile:finalPath] retain];
+	}
+	return self;
+}
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     
