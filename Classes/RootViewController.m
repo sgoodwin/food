@@ -14,10 +14,14 @@
 @implementation RootViewController
 @synthesize listContent;
 
+- (IBAction)goBack:(id)sender
+{
+	[[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 - (void)awakeFromNib
 {
 	self.title =@"Categories";
-	NSLog(@"Root View Controller is alive.");
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -31,7 +35,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
+	//FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
 	static NSString *CellIdentifier = @"Cell";
 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];

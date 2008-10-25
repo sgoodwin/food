@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController {
+@interface RootViewController : UIViewController {
 	NSArray *listContent;
 }
 
+- (IBAction)goBack:(id)sender;
 @property(nonatomic, retain) NSArray *listContent;
 @end
