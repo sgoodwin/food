@@ -15,7 +15,6 @@
 
 - (void)awakeFromNib
 {
-	NSLog(@"Food View Controller has awakened.");
 }
 /*
 - (id)init

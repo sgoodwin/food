@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "FoodAppDelegate.h"
+#import "ItemViewController.h"
 //#import "FoodItem.h"
 
 
@@ -59,6 +60,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	// Navigation logic -- create and push a new view controller
+	ItemViewController *itemView = [[ItemViewController alloc] initWithNibName:@"ItemViewController" bundle:[NSBundle mainBundle]];
+	NSArray *toplevelContent = [[listContent objectAtIndex:indexPath.row] objectForKey:@"itemChildren"];
+	itemView.listContent = toplevelContent;
+	
+	[[self navigationController] pushViewController:itemView animated:YES];
+	[itemView release];
 }
 
 
