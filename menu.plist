@@ -6,7 +6,12 @@
 	<array>
 		<dict>
 			<key>itemChildren</key>
-			<array/>
+			<array>
+				<dict>
+					<key>itemTitle</key>
+					<string>Apple Pie</string>
+				</dict>
+			</array>
 			<key>itemTitle</key>
 			<string>Desserts</string>
 		</dict>
@@ -14,7 +19,12 @@
 			<key>itemTitle</key>
 			<string>Burgers</string>
 			<key>itemChildren</key>
-			<array/>
+			<array>
+				<dict>
+					<key>itemTitle</key>
+					<string>FoodCourt Joke Chicken Burger</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>itemTitle</key>

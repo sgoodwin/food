@@ -8,16 +8,21 @@
 
 #import "RootViewController.h"
 #import "FoodAppDelegate.h"
+#import "ItemViewController.h"
 //#import "FoodItem.h"
 
 
 @implementation RootViewController
 @synthesize listContent;
 
+- (IBAction)goBack:(id)sender
+{
+	[[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 - (void)awakeFromNib
 {
 	self.title =@"Categories";
-	NSLog(@"Root View Controller is alive.");
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -31,7 +36,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
+	//FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
 	static NSString *CellIdentifier = @"Cell";
 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -55,6 +60,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	// Navigation logic -- create and push a new view controller
+	ItemViewController *itemView = [[ItemViewController alloc] initWithNibName:@"ItemViewController" bundle:[NSBundle mainBundle]];
+	NSArray *toplevelContent = [[listContent objectAtIndex:indexPath.row] objectForKey:@"itemChildren"];
+	itemView.listContent = toplevelContent;
+	
+	[[self navigationController] pushViewController:itemView animated:YES];
+	[itemView release];
 }
 
 

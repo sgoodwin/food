@@ -11,12 +11,15 @@
 #import "RootViewController.h"
 
 @implementation FoodViewController
-@synthesize subTotal, basket;
+@synthesize subTotal, basket, theTableView;
 
-- (void)awakeFromNib
-{
-	NSLog(@"Food View Controller has awakened.");
+- (void)addToBasket:(NSDictionary *)itemToAdd{
+	[basket addObject:itemToAdd];
+	[theTableView reloadData];
+	[[self view] setNeedsDisplay];
+	NSLog(@"count is now: %d", [basket count]);
 }
+
 /*
 - (id)init
 {
@@ -74,6 +77,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	NSLog(@"Someone asked me how many rows I had! I told them: %d", [basket count]);
 	return [basket count];
 }
 
@@ -96,6 +100,7 @@
 	//NSLog(@"Index Path requested: %d", [indexPath indexAtPosition:1]);
 	//NSLog(@"Categories contains this many: %d", [[delegate categories] count]);
 	NSDictionary* item = [basket objectAtIndex:indexPath.row];
+	NSLog(@"item to list: %@", item);
 	cell.text = [item objectForKey:@"itemTitle"];
 	return cell;
 }
@@ -109,10 +114,8 @@
 
 - (IBAction)addItem:(id)sender{
 	FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
-	NSLog(@"Add item time.", _cmd);
-	subTotal.text = @"$5.00";
 	//Setup root menu controller and push it so that they can find a menu item.
-	RootViewController *rootView = [[RootViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	RootViewController *rootView = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:[NSBundle mainBundle]];
 	NSArray *toplevelContent = [[delegate menu] objectForKey:@"itemChildren"];
 	rootView.listContent = toplevelContent;
 
