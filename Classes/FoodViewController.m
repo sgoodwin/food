@@ -11,11 +11,15 @@
 #import "RootViewController.h"
 
 @implementation FoodViewController
-@synthesize subTotal, basket;
+@synthesize subTotal, basket, theTableView;
 
-- (void)awakeFromNib
-{
+- (void)addToBasket:(NSDictionary *)itemToAdd{
+	[basket addObject:itemToAdd];
+	[theTableView reloadData];
+	[[self view] setNeedsDisplay];
+	NSLog(@"count is now: %d", [basket count]);
 }
+
 /*
 - (id)init
 {
@@ -73,6 +77,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	NSLog(@"Someone asked me how many rows I had! I told them: %d", [basket count]);
 	return [basket count];
 }
 
@@ -95,6 +100,7 @@
 	//NSLog(@"Index Path requested: %d", [indexPath indexAtPosition:1]);
 	//NSLog(@"Categories contains this many: %d", [[delegate categories] count]);
 	NSDictionary* item = [basket objectAtIndex:indexPath.row];
+	NSLog(@"item to list: %@", item);
 	cell.text = [item objectForKey:@"itemTitle"];
 	return cell;
 }

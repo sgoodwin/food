@@ -11,10 +11,13 @@
 @interface FoodViewController : UIViewController {
 	IBOutlet UITextField *subTotal;
 	NSMutableArray *basket;
+	UITableView *theTableView;
 }
 
 - (IBAction)addItem:(id)sender;
 - (IBAction)checkout:(id)sender;
+- (void)addToBasket:(NSDictionary *)itemToAdd;
 @property(nonatomic, retain) UITextField *subTotal;
 @property(nonatomic, retain) NSMutableArray *basket;
+@property(nonatomic, retain) IBOutlet UITableView *theTableView;
 @end

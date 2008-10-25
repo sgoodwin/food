@@ -113,10 +113,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2899E5210DE3E06400AC0155 /* FoodViewController.xib */,
 				9B8C85100EAE3B8F007D2712 /* menu.plist */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
+				2899E5210DE3E06400AC0155 /* FoodViewController.xib */,
 				9B1133740EB364EA00335B12 /* RootViewController.xib */,
 				9B1133870EB3665D00335B12 /* ItemViewController.xib */,
 				9B1133B10EB3A16A00335B12 /* DetailViewController.xib */,
