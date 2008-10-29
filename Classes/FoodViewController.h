@@ -12,12 +12,15 @@
 	IBOutlet UITextField *subTotal;
 	NSMutableArray *basket;
 	UITableView *theTableView;
+	UITextField *subTotalBox;
 }
 
 - (IBAction)addItem:(id)sender;
 - (IBAction)checkout:(id)sender;
 - (void)addToBasket:(NSDictionary *)itemToAdd;
+- (void)subtotal;
 @property(nonatomic, retain) UITextField *subTotal;
 @property(nonatomic, retain) NSMutableArray *basket;
 @property(nonatomic, retain) IBOutlet UITableView *theTableView;
+@property(nonatomic, retain) IBOutlet UITextField *subTotalBox;
 @end
