@@ -30,7 +30,7 @@
 		sub = [sub decimalNumberByAdding:add];
 		[add release];
 	}
-	NSString *total = [[NSString alloc] initWithFormat:@"$ %f", [sub doubleValue]];
+	NSString *total = [[NSString alloc] initWithFormat:@"$ %1.2f", [sub doubleValue]];
 	NSLog(@"Total is: %@", total);
 	subTotalBox.text = total;
 }
