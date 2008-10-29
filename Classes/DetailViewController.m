@@ -18,7 +18,6 @@
 	//Tell the delegate/foodviewcontroller we added an item and the item to the foodview and go back to that view.
 	FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
 	[[delegate viewController] addToBasket:[self item]];
-	NSLog(@"Basket now contains: %@", [[delegate viewController] basket]);
 	//It puts the item in the basket.
 	[[self navigationController] popToRootViewControllerAnimated:YES];
 }
@@ -48,7 +47,6 @@
 // Implement viewDidLoad to do additional setup after loading the view.
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	NSLog(@"Top Controller: %@", [[self navigationController] topViewController]);
 }
 
 
