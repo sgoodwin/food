@@ -20,6 +20,13 @@
 	[[self view] setNeedsDisplay];
 }
 
+- (void)emptyBasket{
+	[basket removeAllObjects];
+	[self subtotal];
+	[theTableView reloadData];
+	[[self view] setNeedsDisplay];
+}
+
 - (void)subtotal
 {
 	NSLog(@"subtotal called");
@@ -135,7 +142,15 @@
     [[self navigationController] pushViewController:rootView animated:YES];
     [rootView release];
 }
+
 - (IBAction)checkout:(id)sender{
-	NSLog(@"You been checked out.", _cmd);
+	//present alert
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Order Placed" message:@"Your order will be ready in 1 minute."
+												   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+	[alert show];	
+	[alert release];
+	
+	//clear list
+	[self emptyBasket];
 }
 @end
