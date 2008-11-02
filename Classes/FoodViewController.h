@@ -19,6 +19,10 @@
 - (IBAction)checkout:(id)sender;
 - (void)addToBasket:(NSDictionary *)itemToAdd;
 - (void)subtotal;
+
+- (UITableViewCell *)tableviewCellWithReuseIdentifier:(NSString *)identifier;
+- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath;
+
 @property(nonatomic, retain) UITextField *subTotal;
 @property(nonatomic, retain) NSMutableArray *basket;
 @property(nonatomic, retain) IBOutlet UITableView *theTableView;

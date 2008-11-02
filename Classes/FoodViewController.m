@@ -37,7 +37,7 @@
 		sub = [sub decimalNumberByAdding:add];
 		[add release];
 	}
-	NSString *total = [[NSString alloc] initWithFormat:@"$ %1.2f", [sub doubleValue]];
+	NSString *total = [[NSString alloc] initWithFormat:@"$%1.2f", [sub doubleValue]];
 	NSLog(@"Total is: %@", total);
 	subTotalBox.text = total;
 }
@@ -101,33 +101,139 @@
 	return [basket count];
 }
 
+#define NAME_TAG 1
+#define PRICE_TAG 2
+#define IMAGE_TAG 3
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	//FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
-	static NSString *CellIdentifier = @"Cell";
-
+//	//FoodAppDelegate *delegate = (FoodAppDelegate *)[[UIApplication sharedApplication] delegate];
+//	static NSString *CellIdentifier = @"Cell";
+//
+//	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//	if (cell == nil) {
+//		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+//	}
+//
+//	// Set up the cell
+//	//UIImage *displayImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[displayItem icon] ofType:@"png"]];
+//	//if(!testing){
+//	//	NSLog(@"Failed to load image.");
+//	//}
+//	//cell.image = displayImage;
+//	//NSLog(@"Index Path requested: %d", [indexPath indexAtPosition:1]);
+//	//NSLog(@"Categories contains this many: %d", [[delegate categories] count]);
+//	NSDictionary* item = [basket objectAtIndex:indexPath.row];
+//	cell.text = [item objectForKey:@"itemTitle"];
+//	return cell;
+	
+	static NSString *CellIdentifier = @"FoodCell";
+	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+		cell = [self tableviewCellWithReuseIdentifier:CellIdentifier];
 	}
-
-	// Set up the cell
-	//UIImage *displayImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[displayItem icon] ofType:@"png"]];
-	//if(!testing){
-	//	NSLog(@"Failed to load image.");
-	//}
-	//cell.image = displayImage;
-	//NSLog(@"Index Path requested: %d", [indexPath indexAtPosition:1]);
-	//NSLog(@"Categories contains this many: %d", [[delegate categories] count]);
-	NSDictionary* item = [basket objectAtIndex:indexPath.row];
-	cell.text = [item objectForKey:@"itemTitle"];
+	
+	[self configureCell:cell forIndexPath:indexPath];
 	return cell;
+	
+	
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	// Navigation logic -- create and push a new view controller
 }
+
+
+
+- (UITableViewCell *)tableviewCellWithReuseIdentifier:(NSString *)identifier {
+	
+	/*
+	 Create an instance of UITableViewCell and add tagged subviews for the name, price, and image.
+	 */
+	CGRect rect;
+	
+	#define ROW_HEIGHT 44
+	rect = CGRectMake(0.0, 0.0, 320.0, ROW_HEIGHT);
+	
+	UITableViewCell *cell = [[[UITableViewCell alloc] initWithFrame:rect reuseIdentifier:identifier] autorelease];
+	
+	#define LEFT_COLUMN_OFFSET 10.0
+	#define LEFT_COLUMN_WIDTH 30.0
+		
+	#define MIDDLE_COLUMN_OFFSET 50.0
+	#define MIDDLE_COLUMN_WIDTH 215.0
+		
+	#define RIGHT_COLUMN_OFFSET 265.0
+	#define RIGHT_COLUMN_WIDTH 50.0
+	
+	#define MAIN_FONT_SIZE 18.0
+	#define PRICE_FONT_SIZE 14.0
+	#define LABEL_HEIGHT 26.0
+			
+	
+	// Create an image view for the quarter image
+	rect = CGRectMake(LEFT_COLUMN_OFFSET, (ROW_HEIGHT - LEFT_COLUMN_WIDTH) / 2.0, LEFT_COLUMN_WIDTH, LEFT_COLUMN_WIDTH);
+	UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
+	imageView.tag = IMAGE_TAG;
+	[cell.contentView addSubview:imageView];
+	[imageView release];
+	
+	
+	/*
+	 Create labels for the text fields; set the highlight color so that when the cell is selected it changes appropriately.
+	 */
+	UILabel *label;
+	rect = CGRectMake(MIDDLE_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, MIDDLE_COLUMN_WIDTH, LABEL_HEIGHT);
+	label = [[UILabel alloc] initWithFrame:rect];
+	label.tag = NAME_TAG;
+	label.font = [UIFont boldSystemFontOfSize:MAIN_FONT_SIZE];
+	label.adjustsFontSizeToFitWidth = YES;
+	[cell.contentView addSubview:label];
+	label.highlightedTextColor = [UIColor whiteColor];
+	[label release];
+	
+	
+	rect = CGRectMake(RIGHT_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, RIGHT_COLUMN_WIDTH, LABEL_HEIGHT);
+	label = [[UILabel alloc] initWithFrame:rect];
+	label.tag = PRICE_TAG;
+	label.font = [UIFont systemFontOfSize:PRICE_FONT_SIZE];
+	label.adjustsFontSizeToFitWidth = YES;
+	label.textAlignment = UITextAlignmentRight;
+	[cell.contentView addSubview:label];
+	label.highlightedTextColor = [UIColor whiteColor];
+	[label release];
+	
+	
+
+	
+	return cell;
+}
+
+
+- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    
+	NSDictionary* item = [basket objectAtIndex:indexPath.row];
+	
+	UILabel *label;
+	
+	// Get the name
+	label = (UILabel *)[cell viewWithTag:NAME_TAG];
+	label.text = [item objectForKey:@"itemTitle"];
+	
+	// Get the price
+	label = (UILabel *)[cell viewWithTag:PRICE_TAG];
+	label.text = [[NSString alloc] initWithFormat:@"$%1.2f", [[item objectForKey:@"price"] doubleValue]];
+	
+	// Get the image
+	UIImageView *imageView = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
+	imageView.image = [UIImage imageNamed:@"6-12AM.png"];
+}    
+
+
 
 //Code for actions recieved by the controller:
 

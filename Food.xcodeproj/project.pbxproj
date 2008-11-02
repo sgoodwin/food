@@ -23,7 +23,11 @@
 		9B2C13000EBB6506009123B9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2C12FF0EBB6506009123B9 /* Icon.png */; };
 		9B8C84EC0EAE3826007D2712 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C84EB0EAE3826007D2712 /* RootViewController.m */; };
 		9B8C85110EAE3B8F007D2712 /* menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C85100EAE3B8F007D2712 /* menu.plist */; };
+<<<<<<< HEAD:Food.xcodeproj/project.pbxproj
 		9BD6F9DA0EBB64BA00F7C2B5 /* Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9BD6F9D90EBB64BA00F7C2B5 /* Icon.jpg */; };
+=======
+		C9C6159A0EBD63A400883EBA /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = C9C615990EBD63A400883EBA /* 6-12AM.png */; };
+>>>>>>> 6166610a26a278a75f3fccb7926a6bee19703dad:Food.xcodeproj/project.pbxproj
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +55,11 @@
 		9B8C84EA0EAE3826007D2712 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9B8C84EB0EAE3826007D2712 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		9B8C85100EAE3B8F007D2712 /* menu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menu.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD:Food.xcodeproj/project.pbxproj
 		9BD6F9D90EBB64BA00F7C2B5 /* Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Icon.jpg; sourceTree = "<group>"; };
+=======
+		C9C615990EBD63A400883EBA /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
+>>>>>>> 6166610a26a278a75f3fccb7926a6bee19703dad:Food.xcodeproj/project.pbxproj
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +125,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD:Food.xcodeproj/project.pbxproj
 				9B2C12FF0EBB6506009123B9 /* Icon.png */,
 				9BD6F9D90EBB64BA00F7C2B5 /* Icon.jpg */,
+=======
+				C9C615990EBD63A400883EBA /* 6-12AM.png */,
+>>>>>>> 6166610a26a278a75f3fccb7926a6bee19703dad:Food.xcodeproj/project.pbxproj
 				9B8C85100EAE3B8F007D2712 /* menu.plist */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -188,8 +200,12 @@
 				9B1133750EB364EA00335B12 /* RootViewController.xib in Resources */,
 				9B1133880EB3665D00335B12 /* ItemViewController.xib in Resources */,
 				9B1133B20EB3A16A00335B12 /* DetailViewController.xib in Resources */,
+<<<<<<< HEAD:Food.xcodeproj/project.pbxproj
 				9BD6F9DA0EBB64BA00F7C2B5 /* Icon.jpg in Resources */,
 				9B2C13000EBB6506009123B9 /* Icon.png in Resources */,
+=======
+				C9C6159A0EBD63A400883EBA /* 6-12AM.png in Resources */,
+>>>>>>> 6166610a26a278a75f3fccb7926a6bee19703dad:Food.xcodeproj/project.pbxproj
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,9 +24,15 @@
 			<array>
 				<dict>
 					<key>price</key>
+					<string>10.6</string>
+					<key>itemTitle</key>
+					<string>Bacon Burger</string>
+				</dict>
+				<dict>
+					<key>price</key>
 					<string>5.6</string>
 					<key>itemTitle</key>
-					<string>FoodCourt Joke Chicken Burger</string>
+					<string>Chicken Burger</string>
 				</dict>
 			</array>
 		</dict>
