@@ -8,6 +8,8 @@
 			<key>itemChildren</key>
 			<array>
 				<dict>
+					<key>info</key>
+					<string>Calories: 150NEWCalories from Fat: 45NEWTotal Fat (g): 0NEW</string>
 					<key>price</key>
 					<string>1.30</string>
 					<key>itemTitle</key>

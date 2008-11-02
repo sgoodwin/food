@@ -11,7 +11,7 @@
 #import "FoodViewController.h"
 
 @implementation DetailViewController
-@synthesize item, nutrition, imageView;
+@synthesize item, nutrition, imageView, thetitle;
 
 
 - (IBAction)addItem:(id)sender{
@@ -39,17 +39,20 @@
 
 
 // Implement loadView to create a view hierarchy programmatically.
-- (void)loadView {
-	//Set the display image for the item being displayed.
-	imageView.image = [UIImage imageNamed:[item objectForKey:@"image"]];
-	[super loadView];
-}
+// - (void)loadView {
+// 	//Set the display image for the item being displayed.
+// 
+// 	[super loadView];
+// }
 
 
 // Implement viewDidLoad to do additional setup after loading the view.
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	nutrition.text = @"This\nis\na test\nto see\n if this works.\nThere\nonce was a boy from nantucket\nhe ate babies or something\nand the cops found\nhis wife's head in the freezer.";
+	imageView.image = [UIImage imageNamed:[item objectForKey:@"image"]];
+	thetitle.text = [item objectForKey:@"itemTitle"];
+	nutrition.text = [[item objectForKey:@"info"] stringByReplacingOccurrencesOfString:@"NEW" withString:@"\n"];
+	nutrition.editable = NO;
 }
 
 

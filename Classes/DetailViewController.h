@@ -13,6 +13,7 @@
 	NSDictionary *item;
 	UITextView *nutrition;
 	UIImageView *imageView;
+	UILabel *thetitle;
 }
 
 - (IBAction)addItem:(id)sender;
@@ -21,4 +22,5 @@
 @property (nonatomic, retain) NSDictionary *item;
 @property (nonatomic, retain) IBOutlet UITextView *nutrition;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet UILabel *thetitle;
 @end
