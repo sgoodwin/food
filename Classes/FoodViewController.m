@@ -144,7 +144,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	// Navigation logic -- create and push a new view controller
+	[tableView deselectRowAtIndexPath:indexPath animated:NO]; 
 }
 
 
@@ -230,7 +230,10 @@
 	
 	// Get the image
 	UIImageView *imageView = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
-	imageView.image = [UIImage imageNamed:@"6-12AM.png"];
+//	imageView.image = [UIImage imageNamed:@"cone.jpg"];
+
+	imageView.image = [UIImage imageNamed:[item objectForKey:@"image"]];
+
 }    
 
 

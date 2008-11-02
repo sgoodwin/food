@@ -20,7 +20,6 @@
 		9B1133880EB3665D00335B12 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B1133870EB3665D00335B12 /* ItemViewController.xib */; };
 		9B1133AE0EB3A14800335B12 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1133AD0EB3A14800335B12 /* DetailViewController.m */; };
 		9B1133B20EB3A16A00335B12 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B1133B10EB3A16A00335B12 /* DetailViewController.xib */; };
-		9B22F08F0EBD75F2003869F5 /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B22F07C0EBD75F2003869F5 /* 6-12AM.png */; };
 		9B22F0900EBD75F2003869F5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B22F07D0EBD75F2003869F5 /* Icon.png */; };
 		9B22F0910EBD75F2003869F5 /* banana_split .jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B22F07F0EBD75F2003869F5 /* banana_split .jpg */; };
 		9B22F0920EBD75F2003869F5 /* blizzard .jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B22F0800EBD75F2003869F5 /* blizzard .jpg */; };
@@ -63,7 +62,6 @@
 		9B1133AC0EB3A14800335B12 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		9B1133AD0EB3A14800335B12 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9B1133B10EB3A16A00335B12 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
-		9B22F07C0EBD75F2003869F5 /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
 		9B22F07D0EBD75F2003869F5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		9B22F07F0EBD75F2003869F5 /* banana_split .jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "banana_split .jpg"; sourceTree = "<group>"; };
 		9B22F0800EBD75F2003869F5 /* blizzard .jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blizzard .jpg"; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9B22F07C0EBD75F2003869F5 /* 6-12AM.png */,
 				9B22F07D0EBD75F2003869F5 /* Icon.png */,
 				9B22F07E0EBD75F2003869F5 /* Images */,
 				9B8C85100EAE3B8F007D2712 /* menu.plist */,
@@ -244,7 +241,6 @@
 				9B1133750EB364EA00335B12 /* RootViewController.xib in Resources */,
 				9B1133880EB3665D00335B12 /* ItemViewController.xib in Resources */,
 				9B1133B20EB3A16A00335B12 /* DetailViewController.xib in Resources */,
-				9B22F08F0EBD75F2003869F5 /* 6-12AM.png in Resources */,
 				9B22F0900EBD75F2003869F5 /* Icon.png in Resources */,
 				9B22F0910EBD75F2003869F5 /* banana_split .jpg in Resources */,
 				9B22F0920EBD75F2003869F5 /* blizzard .jpg in Resources */,
