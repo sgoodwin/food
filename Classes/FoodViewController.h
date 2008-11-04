@@ -13,6 +13,7 @@
 	NSMutableArray *basket;
 	UITableView *theTableView;
 	UITextField *subTotalBox;
+	CGPoint startTouchPosition;
 }
 
 - (IBAction)addItem:(id)sender;
@@ -27,4 +28,5 @@
 @property(nonatomic, retain) NSMutableArray *basket;
 @property(nonatomic, retain) IBOutlet UITableView *theTableView;
 @property(nonatomic, retain) IBOutlet UITextField *subTotalBox;
+@property(nonatomic ) CGPoint startTouchPosition;
 @end

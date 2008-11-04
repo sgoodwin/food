@@ -11,7 +11,7 @@
 #import "RootViewController.h"
 
 @implementation FoodViewController
-@synthesize subTotal, basket, theTableView, subTotalBox;
+@synthesize subTotal, basket, theTableView, subTotalBox, startTouchPosition;
 
 - (void)addToBasket:(NSDictionary *)itemToAdd{
 	[basket addObject:itemToAdd];
@@ -29,16 +29,13 @@
 
 - (void)subtotal
 {
-	NSLog(@"subtotal called");
 	NSDecimalNumber *sub = [NSDecimalNumber zero];
 	for(NSDictionary *item in basket){
-		NSLog(@"Adding: %@", [item objectForKey:@"price"]);
 		NSDecimalNumber *add = [[NSDecimalNumber alloc] initWithString:[item objectForKey:@"price"]];
 		sub = [sub decimalNumberByAdding:add];
 		[add release];
 	}
 	NSString *total = [[NSString alloc] initWithFormat:@"$%1.2f", [sub doubleValue]];
-	NSLog(@"Total is: %@", total);
 	subTotalBox.text = total;
 }
 /*
@@ -262,4 +259,17 @@
 	//clear list
 	[self emptyBasket];
 }
+
+//Code to handle removing objects from the table:
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+	//Actuallly remove
+	if(UITableViewCellEditingStyleDelete == editingStyle){
+		[basket removeObjectAtIndex:indexPath.row];
+	}
+	[self subtotal];
+	[theTableView reloadData];
+	[[self view] setNeedsDisplay];
+}
+
 @end

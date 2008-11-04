@@ -58,19 +58,6 @@
 			<key>itemChildren</key>
 			<dict/>
 		</dict>
-		<dict>
-			<key>itemTitle</key>
-			<string>Sundaes</string>
-			<key>itemChildren</key>
-			<array>
-				<dict>
-					<key>price</key>
-					<string>0.75</string>
-					<key>itemTitle</key>
-					<string>Pepsi</string>
-				</dict>
-			</array>
-		</dict>
 	</array>
 </dict>
 </plist>
