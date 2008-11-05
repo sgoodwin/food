@@ -49,11 +49,11 @@
 */
 // Override initWithNibName:bundle: to load the view using a nib file then perform additional customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
+	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+		// Custom initialization
 		basket = [[NSMutableArray alloc] initWithCapacity:1];
-    }
-    return self;
+	}
+	return self;
 }
 
 /*
@@ -66,25 +66,25 @@
 /*
 // Implement viewDidLoad to do additional setup after loading the view.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 }
 */
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	// Return YES for supported orientations
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
+	[super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
+	// Release anything that's not essential, such as cached data
 }
 
 
 - (void)dealloc {
-    [super dealloc];
+	[super dealloc];
 }
 
 //Code for UITableView data source protocol:
@@ -124,19 +124,19 @@
 //	NSDictionary* item = [basket objectAtIndex:indexPath.row];
 //	cell.text = [item objectForKey:@"itemTitle"];
 //	return cell;
-	
+
 	static NSString *CellIdentifier = @"FoodCell";
-	
+
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
+
 	if (cell == nil) {
 		cell = [self tableviewCellWithReuseIdentifier:CellIdentifier];
 	}
-	
+
 	[self configureCell:cell forIndexPath:indexPath];
 	return cell;
-	
-	
+
+
 }
 
 
@@ -147,43 +147,43 @@
 
 
 - (UITableViewCell *)tableviewCellWithReuseIdentifier:(NSString *)identifier {
-	
+
 	/*
-	 Create an instance of UITableViewCell and add tagged subviews for the name, price, and image.
-	 */
-	CGRect rect;
-	
+	Create an instance of UITableViewCell and add tagged subviews for the name, price, and image.
+	*/
+		CGRect rect;
+
 	#define ROW_HEIGHT 44
 	rect = CGRectMake(0.0, 0.0, 320.0, ROW_HEIGHT);
-	
+
 	UITableViewCell *cell = [[[UITableViewCell alloc] initWithFrame:rect reuseIdentifier:identifier] autorelease];
-	
+
 	#define LEFT_COLUMN_OFFSET 10.0
 	#define LEFT_COLUMN_WIDTH 30.0
-		
+
 	#define MIDDLE_COLUMN_OFFSET 50.0
 	#define MIDDLE_COLUMN_WIDTH 215.0
-		
+
 	#define RIGHT_COLUMN_OFFSET 265.0
 	#define RIGHT_COLUMN_WIDTH 50.0
-	
+
 	#define MAIN_FONT_SIZE 18.0
 	#define PRICE_FONT_SIZE 14.0
 	#define LABEL_HEIGHT 26.0
-			
-	
+
+
 	// Create an image view for the quarter image
 	rect = CGRectMake(LEFT_COLUMN_OFFSET, (ROW_HEIGHT - LEFT_COLUMN_WIDTH) / 2.0, LEFT_COLUMN_WIDTH, LEFT_COLUMN_WIDTH);
 	UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
 	imageView.tag = IMAGE_TAG;
 	[cell.contentView addSubview:imageView];
 	[imageView release];
-	
-	
+
+
 	/*
-	 Create labels for the text fields; set the highlight color so that when the cell is selected it changes appropriately.
-	 */
-	UILabel *label;
+	Create labels for the text fields; set the highlight color so that when the cell is selected it changes appropriately.
+	*/
+		UILabel *label;
 	rect = CGRectMake(MIDDLE_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, MIDDLE_COLUMN_WIDTH, LABEL_HEIGHT);
 	label = [[UILabel alloc] initWithFrame:rect];
 	label.tag = NAME_TAG;
@@ -192,8 +192,8 @@
 	[cell.contentView addSubview:label];
 	label.highlightedTextColor = [UIColor whiteColor];
 	[label release];
-	
-	
+
+
 	rect = CGRectMake(RIGHT_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, RIGHT_COLUMN_WIDTH, LABEL_HEIGHT);
 	label = [[UILabel alloc] initWithFrame:rect];
 	label.tag = PRICE_TAG;
@@ -203,28 +203,28 @@
 	[cell.contentView addSubview:label];
 	label.highlightedTextColor = [UIColor whiteColor];
 	[label release];
-	
-	
 
-	
+
+
+
 	return cell;
 }
 
 
 - (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    
+
 	NSDictionary* item = [basket objectAtIndex:indexPath.row];
-	
+
 	UILabel *label;
-	
+
 	// Get the name
 	label = (UILabel *)[cell viewWithTag:NAME_TAG];
 	label.text = [item objectForKey:@"itemTitle"];
-	
+
 	// Get the price
 	label = (UILabel *)[cell viewWithTag:PRICE_TAG];
 	label.text = [[NSString alloc] initWithFormat:@"$%1.2f", [[item objectForKey:@"price"] doubleValue]];
-	
+
 	// Get the image
 	UIImageView *imageView = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
 //	imageView.image = [UIImage imageNamed:@"cone.jpg"];
@@ -244,18 +244,36 @@
 	NSArray *toplevelContent = [[delegate menu] objectForKey:@"itemChildren"];
 	rootView.listContent = toplevelContent;
 
-    // Push the detail view controller
-    [[self navigationController] pushViewController:rootView animated:YES];
-    [rootView release];
+	// Push the detail view controller
+	[[self navigationController] pushViewController:rootView animated:YES];
+	[rootView release];
 }
 
 - (IBAction)checkout:(id)sender{
 	//present alert
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Order Placed" message:@"Your order will be ready in 1 minute."
-												   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-	[alert show];	
-	[alert release];
+		delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+	//Build a URL Request of the ordered items to Matt can show it.
+	NSString *post = @"";
+	for(NSDictionary *item in basket){
+		post = [post stringByAppendingString:[item objectForKey:@"itemTitle"]];
+		post = [post stringByAppendingString:@","];
+	}
+	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+
+	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+	[request setURL:[NSURL URLWithString:@"http://www.nowhere.com/sendFormHere.php"]];
+	[request setHTTPMethod:@"POST"];
+	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	[request setHTTPBody:postData];
 	
+
+	NSLog(@"post = %@", post);
+		[alert show];	
+	[alert release];
+
 	//clear list
 	[self emptyBasket];
 }

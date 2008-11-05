@@ -2,69 +2,136 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>itemChildren</key>
-  <array>
-    <dict>
-      <key>itemChildren</key>
-      <array>
-        <dict>
-          <key>info</key>
-          <string>Calories: 150NEWCalories from Fat: 45NEWTotal Fat (g): 0NEW</string>
-          <key>price</key>
-          <string>1.30</string>
-          <key>itemTitle</key>
-          <string>Chocolate Soft Serve</string>
-          <key>image</key>
-          <string>cone.jpg</string>
-        </dict>
-        <dict>
-		  <key>info</key>
-          <string>Calories: 150NEWCalories from Fat: 45NEWTotal Fat (g): 0NEW</string>
-          <key>image</key>
-          <string>cone.jpg</string>
-          <key>price</key>
-          <string>1.30</string>
-          <key>itemTitle</key>
-          <string>Vanilla Soft Serve</string>
-        </dict>
-      </array>
-      <key>itemTitle</key>
-      <string>Cones</string>
-    </dict>
-    <dict>
-      <key>itemTitle</key>
-      <string>Waffle Treats</string>
-      <key>itemChildren</key>
-      <array>
-        <dict>
-		<key>info</key>
-		<string>Calories: 800NEWCalories from Fat: 360NEWTotal Fat (g): 40NEW</string>
-          <key>image</key>
-          <string>banana_split.jpg</string>
-          <key>price</key>
-          <string>10.6</string>
-          <key>itemTitle</key>
-          <string>Chocolate Covered Strawberry Waffle Bowl Sundae</string>
-        </dict>
-        <dict>
-		<key>info</key>
-		<string>Calories: 820NEWCalories from Fat: 310NEWTotal Fat (g): 35NEW</string>
-          <key>image</key>
-          <string>brownie.jpg</string>
-          <key>price</key>
-          <string>5.6</string>
-          <key>itemTitle</key>
-          <string>Turtle Waffle Bowl Sundae</string>
-        </dict>
-      </array>
-    </dict>
-    <dict>
-      <key>itemTitle</key>
-      <string>Malts and Shakes</string>
-      <key>itemChildren</key>
-      <dict/>
-    </dict>
-  </array>
+	<key>itemChildren</key>
+	<array>
+		<dict>
+			<key>itemChildren</key>
+			<array>
+				<dict>
+					<key>info</key>
+					<string>Calories: 150NEWCalories from Fat: 45NEWTotal Fat (g): 0NEW</string>
+					<key>price</key>
+					<string>1.30</string>
+					<key>itemTitle</key>
+					<string>Chocolate Soft Serve</string>
+					<key>image</key>
+					<string>cone.jpg</string>
+				</dict>
+				<dict>
+					<key>info</key>
+					<string>Calories: 150NEWCalories from Fat: 45NEWTotal Fat (g): 0NEW</string>
+					<key>image</key>
+					<string>cone.jpg</string>
+					<key>price</key>
+					<string>1.30</string>
+					<key>itemTitle</key>
+					<string>Vanilla Soft Serve</string>
+				</dict>
+			</array>
+			<key>itemTitle</key>
+			<string>Cones</string>
+		</dict>
+		<dict>
+			<key>itemChildren</key>
+			<array>
+				<dict>
+					<key>info</key>
+					<string>Calories: 800NEWCalories from Fat: 360NEWTotal Fat (g): 40NEW</string>
+					<key>image</key>
+					<string>banana_split.jpg</string>
+					<key>price</key>
+					<string>10.6</string>
+					<key>itemTitle</key>
+					<string>Chocolate Covered Strawberry Waffle Bowl Sundae</string>
+				</dict>
+				<dict>
+					<key>info</key>
+					<string>Calories: 820NEWCalories from Fat: 310NEWTotal Fat (g): 35NEW</string>
+					<key>image</key>
+					<string>brownie.jpg</string>
+					<key>price</key>
+					<string>5.6</string>
+					<key>itemTitle</key>
+					<string>Turtle Waffle Bowl Sundae</string>
+				</dict>
+			</array>
+			<key>itemTitle</key>
+			<string>Waffle Treats</string>
+		</dict>
+		<dict>
+			<key>itemChildren</key>
+			<array>
+				<dict>
+					<key>info</key>
+					<string>Calories: 280NEWCalories from Fat: 60NEWTotal Fat (g): 7NEW</string>
+					<key>image</key>
+					<string>strawberry.jpg</string>
+					<key>price</key>
+					<string>1.5</string>
+					<key>itemTitle</key>
+					<string>Strawberry Sundae</string>
+				</dict>
+				<dict>
+					<key>info</key>
+					<string>Calories: 280NEWCalories from Fat: 60NEWTotal Fat (g): 7NEW</string>
+					<key>image</key>
+					<string>strawberry.jpg</string>
+					<key>price</key>
+					<string>1.5</string>
+					<key>itemTitle</key>
+					<string>Chocolate Sundae</string>
+				</dict>
+				<dict>
+					<key>info</key>
+					<string>Calories: 710NEWCalories from Fat: 27-NEWTotal Fat (g): 30NEW</string>
+					<key>image</key>
+					<string>peanut_parfait.jpg</string>
+					<key>price</key>
+					<string>2.75</string>
+					<key>itemTitle</key>
+					<string>Peanut Buster Parfait</string>
+				</dict>
+			</array>
+			<key>itemTitle</key>
+			<string>Sundaes</string>
+		</dict>
+		<dict>
+			<key>itemChildren</key>
+			<array>
+				<dict>
+					<key>info</key>
+					<string>Calories: 640NEWCalories from Fat: 149NEWTotal Fat (g): 14NEW</string>
+					<key>image</key>
+					<string>milkshake.jpg</string>
+					<key>price</key>
+					<string>2.5</string>
+					<key>itemTitle</key>
+					<string>Chocolate Shake</string>
+				</dict>
+				<dict>
+					<key>info</key>
+					<string>Calories: 640NEWCalories from Fat: 149NEWTotal Fat (g): 14NEW</string>
+					<key>image</key>
+					<string>milkshake.jpg</string>
+					<key>price</key>
+					<string>2.5</string>
+					<key>itemTitle</key>
+					<string>Vanilla Shake</string>
+				</dict>
+				<dict>
+					<key>info</key>
+					<string>Calories: 240NEWCalories from Fat: 0NEWTotal Fat (g): 0NEW</string>
+					<key>image</key>
+					<string>slushie.jpg</string>
+					<key>price</key>
+					<string>2.0</string>
+					<key>itemTitle</key>
+					<string>Slushie</string>
+				</dict>
+			</array>
+			<key>itemTitle</key>
+			<string>Malts and Shakes</string>
+		</dict>
+	</array>
 </dict>
 </plist>
- 
