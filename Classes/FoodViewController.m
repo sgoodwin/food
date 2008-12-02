@@ -11,7 +11,7 @@
 #import "RootViewController.h"
 
 @implementation FoodViewController
-@synthesize subTotal, basket, theTableView, subTotalBox, startTouchPosition;
+@synthesize subTotal, basket, theTableView, subTotalBox, startTouchPosition, removeButton;
 
 - (void)addToBasket:(NSDictionary *)itemToAdd{
 	[basket addObject:itemToAdd];
@@ -247,6 +247,21 @@
 	// Push the detail view controller
 	[[self navigationController] pushViewController:rootView animated:YES];
 	[rootView release];
+}
+
+- (IBAction)removeItem:(id)sender
+{
+	NSLog(@"%s Enabling editing", _cmd);
+	NSLog(@"%@",  removeButton);
+	if(theTableView.editing == YES){
+		[removeButton setTitle:@"Remove Item" forState:UIControlStateNormal];
+		[theTableView setEditing:NO animated:YES];
+	}
+	else {
+		[removeButton setTitle:@"Done" forState:UIControlStateNormal];
+		[theTableView setEditing:YES animated:YES];
+	}
+	
 }
 
 - (IBAction)checkout:(id)sender{

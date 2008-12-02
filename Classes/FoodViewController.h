@@ -13,10 +13,12 @@
 	NSMutableArray *basket;
 	UITableView *theTableView;
 	UITextField *subTotalBox;
+	UIButton *removeButton;
 	CGPoint startTouchPosition;
 }
 
 - (IBAction)addItem:(id)sender;
+- (IBAction)removeItem:(id)sender;
 - (IBAction)checkout:(id)sender;
 - (void)addToBasket:(NSDictionary *)itemToAdd;
 - (void)subtotal;
@@ -27,6 +29,7 @@
 @property(nonatomic, retain) UITextField *subTotal;
 @property(nonatomic, retain) NSMutableArray *basket;
 @property(nonatomic, retain) IBOutlet UITableView *theTableView;
+@property(nonatomic, retain) IBOutlet UIButton *removeButton;
 @property(nonatomic, retain) IBOutlet UITextField *subTotalBox;
 @property(nonatomic ) CGPoint startTouchPosition;
 @end

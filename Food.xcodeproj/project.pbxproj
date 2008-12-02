@@ -38,8 +38,6 @@
 		9B22F09F0EBD75F2003869F5 /* slushie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B22F08D0EBD75F2003869F5 /* slushie.jpg */; };
 		9B22F0A00EBD75F2003869F5 /* strawberry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B22F08E0EBD75F2003869F5 /* strawberry.jpg */; };
 		9B8C84EC0EAE3826007D2712 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C84EB0EAE3826007D2712 /* RootViewController.m */; };
-		9BCE4A2A0EC20B6B00907635 /* menu.plist.working in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE4A280EC20B6B00907635 /* menu.plist.working */; };
-		9BCE4A490EC20E9800907635 /* menu.plist.alsoworking in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE4A480EC20E9800907635 /* menu.plist.alsoworking */; };
 		9BCE4A4F0EC20F6E00907635 /* menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE4A4E0EC20F6E00907635 /* menu.plist */; };
 /* End PBXBuildFile section */
 
@@ -83,8 +81,6 @@
 		9B22F08E0EBD75F2003869F5 /* strawberry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = strawberry.jpg; sourceTree = "<group>"; };
 		9B8C84EA0EAE3826007D2712 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9B8C84EB0EAE3826007D2712 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		9BCE4A280EC20B6B00907635 /* menu.plist.working */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = menu.plist.working; sourceTree = "<group>"; };
-		9BCE4A480EC20E9800907635 /* menu.plist.alsoworking */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = menu.plist.alsoworking; sourceTree = "<group>"; };
 		9BCE4A4E0EC20F6E00907635 /* menu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menu.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				9BCE4A4E0EC20F6E00907635 /* menu.plist */,
-				9BCE4A480EC20E9800907635 /* menu.plist.alsoworking */,
-				9BCE4A280EC20B6B00907635 /* menu.plist.working */,
 				9B22F07D0EBD75F2003869F5 /* Icon.png */,
 				9B22F07E0EBD75F2003869F5 /* Images */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -263,8 +257,6 @@
 				9B22F09E0EBD75F2003869F5 /* peanut_parfait.jpg in Resources */,
 				9B22F09F0EBD75F2003869F5 /* slushie.jpg in Resources */,
 				9B22F0A00EBD75F2003869F5 /* strawberry.jpg in Resources */,
-				9BCE4A2A0EC20B6B00907635 /* menu.plist.working in Resources */,
-				9BCE4A490EC20E9800907635 /* menu.plist.alsoworking in Resources */,
 				9BCE4A4F0EC20F6E00907635 /* menu.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
