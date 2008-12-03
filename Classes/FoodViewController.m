@@ -269,23 +269,30 @@
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Order Placed" message:@"Your order will be ready in 1 minute."
 		delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
 	//Build a URL Request of the ordered items to Matt can show it.
-	// NSString *post = @"";
-	// for(NSDictionary *item in basket){
-	// 	post = [post stringByAppendingString:[item objectForKey:@"itemTitle"]];
-	// 	post = [post stringByAppendingString:@","];
-	// }
-	// NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-	// NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-	// 
-	// NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
-	// [request setURL:[NSURL URLWithString:@"http://www.nowhere.com/sendFormHere.php"]];
-	// [request setHTTPMethod:@"POST"];
-	// [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-	// [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-	// [request setHTTPBody:postData];
+	NSString *post = @"item=";
+	for(NSDictionary *item in basket){
+		post = [post stringByAppendingString:[item objectForKey:@"itemTitle"]];
+		post = [post stringByAppendingString:@","];
+	}
+	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
 
-	//NSLog(@"post = %@", post);
-		[alert show];	
+	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+	[request setURL:[NSURL URLWithString:@"http://dlzip.com/food/order.php"]];
+	[request setHTTPMethod:@"POST"];
+	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	[request setHTTPBody:postData];
+
+	NSURLConnection *connectionResponse = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	if (!connectionResponse) {
+		NSLog(@"Failed to submit request");
+	} else {
+		NSLog(@"Request submitted");
+	}
+	
+	NSLog(@"post = %@", post);
+	[alert show];	
 	[alert release];
 
 	//clear list
